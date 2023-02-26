@@ -5,7 +5,6 @@ import ru.clevertec.entity.Middle;
 import ru.clevertec.entity.Simple;
 import ru.clevertec.entity.Top;
 import ru.clevertec.parser.ObjParser;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,10 +33,5 @@ public class Main {
         System.out.println(new ObjParser().toJson(top));
         System.out.println("\nNext string -> made by Gson parser\n-------------------------------");
         System.out.println(new Gson().toJson(top));
-
-
-
-
-
     }
 }

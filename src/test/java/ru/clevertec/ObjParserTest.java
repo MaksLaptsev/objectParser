@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -30,6 +31,11 @@ class ObjParserTest {
     void tearDown() {
     }
 
+    @Test
+    void toJson() throws IOException, ClassNotFoundException, IllegalAccessException {
+        Assertions.assertThat(objParser.toJson(null)).isEqualTo(gson.toJson(null));
+    }
+
     @ParameterizedTest
     @MethodSource("argsForToJson")
     void toJson(Object o) throws IllegalAccessException, IOException, ClassNotFoundException {
@@ -39,7 +45,7 @@ class ObjParserTest {
     static Stream<Arguments> argsForToJson(){
         return Stream.of(
                 Arguments.of(
-                        new Simple(1,null,"D-Grey",12,true, Arrays.asList(1,2,3,4))
+                        new Simple(1,"Filche","D-Grey",12,true, Arrays.asList(1,2,3,4))
                 ),
                 Arguments.of(
                         new Middle(2,"Henry","D-Blue",35,false,

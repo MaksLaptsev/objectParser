@@ -60,13 +60,17 @@ public class ToJson {
         writer.beginArray();
         int size = object.getClass().getSimpleName().split("\\[").length-1;//проверка на вложенный массив типа Integer[] or Integer [][]
         checkInArray(size,f,object);//проверка на вложенный массив типа Integer[] or Integer [][]
-        if(object instanceof Integer[] || object instanceof int[]){
-            Integer [] array = (Integer[]) object;
+        if(object instanceof Integer[] array){
+            writeArray(array,false);
+        } else if (object instanceof int[] ar) {
+            Integer[] array = ArrayUtils.toObject(ar);
             writeArray(array,false);
         } else if (object instanceof String[] array) {
             writeArray(array,true);
-        } else if (object instanceof Character[] || object instanceof char[]) {
-            Character[] array = (Character[]) object;
+        } else if (object instanceof Character[] array) {
+            writeArray(array,true);
+        } else if (object instanceof char[] arr) {
+            Character[] array = ArrayUtils.toObject(arr);
             writeArray(array,true);
         } else if (object instanceof Boolean[] array) {
             writeArray(array,false);
@@ -80,10 +84,16 @@ public class ToJson {
         } else if (object instanceof byte[] array) {
             Byte[] ar = ArrayUtils.toObject(array);
             writeArray(ar,false);
-        } else if (object instanceof Float[] || object instanceof Double[] || object instanceof float[] || object instanceof double[]) {
+        } else if (object instanceof Float[] || object instanceof Double[]) {
             Object[] array = (Object[]) object;
             writeArray(array,false);
-        }else if (object instanceof List<?>){
+        } else if (object instanceof float[] arr) {
+            Float[] array = ArrayUtils.toObject(arr);
+            writeArray(array,false);
+        } else if (object instanceof double[] arr) {
+            Double[] array = ArrayUtils.toObject(arr);
+            writeArray(array,false);
+        } else if (object instanceof List<?>){
             List<?> array = (List<?>) object;
             writeArray(array,false,f);
         }
