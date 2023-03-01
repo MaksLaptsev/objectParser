@@ -100,6 +100,4 @@ public class ObjWriter {
         out.append(s);
     }
 
-
-
 }

@@ -22,8 +22,4 @@ public class ObjParser {
         return toJsonObj.toJson(object,typeObject);
     }
 
-
-
-
-
 }
