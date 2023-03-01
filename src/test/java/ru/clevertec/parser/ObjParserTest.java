@@ -1,4 +1,4 @@
-package ru.clevertec;
+package ru.clevertec.parser;
 
 import com.google.gson.Gson;
 import org.assertj.core.api.Assertions;
@@ -43,6 +43,8 @@ class ObjParserTest {
     void toJson(Object o) throws IllegalAccessException, IOException, ClassNotFoundException {
         Assertions.assertThat(objParser.toJson(o)).isEqualTo(gson.toJson(o));
     }
+
+
 
 
 

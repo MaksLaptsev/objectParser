@@ -1,4 +1,4 @@
-package ru.clevertec.ObjSimpleWriter;
+package ru.clevertec.ObjSimpleWriterAndReader;
 
 import java.io.IOException;
 

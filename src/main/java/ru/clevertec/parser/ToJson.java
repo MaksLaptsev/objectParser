@@ -1,7 +1,7 @@
 package ru.clevertec.parser;
 
 import org.apache.commons.lang3.ArrayUtils;
-import ru.clevertec.ObjSimpleWriter.ObjWriter;
+import ru.clevertec.ObjSimpleWriterAndReader.ObjWriter;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -115,6 +115,8 @@ public class ToJson {
             Object d = iterator.next();
             if (isNotStandartJavaObj(d)){
                 writer.write(new ObjParser().toJson(d));
+            } else if (d.getClass().equals(String.class) || d.getClass().equals(Character.class) || d.getClass().equals(char.class)) {
+                writer.writeValueField(d.toString(),true);
             } else {
                 writer.writeValueField(d.toString(),b);
             }
