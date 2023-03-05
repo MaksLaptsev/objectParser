@@ -36,4 +36,5 @@ public class Simple {
         result = 31 * result + Arrays.hashCode(integers);
         return result;
     }
+
 }

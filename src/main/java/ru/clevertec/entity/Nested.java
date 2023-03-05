@@ -33,4 +33,5 @@ public class Nested {
     public int hashCode() {
         return Objects.hash(id, age, name, lastName, longList, stringList, booleanList, characterList, floatList);
     }
+
 }

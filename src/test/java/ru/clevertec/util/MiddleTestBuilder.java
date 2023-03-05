@@ -19,8 +19,8 @@ public class MiddleTestBuilder implements TestBuilder<MiddleTestBuilder>{
     private String surName;
     private int age;
     private boolean likeApple;
-    private String[][] strings;
-    private int[][] integers;
+    private String[][][] strings;
+    private int[][][] integers;
     private Boolean[][] booleans;
     private char[] characters;
     private double[] doubles;
@@ -40,8 +40,8 @@ public class MiddleTestBuilder implements TestBuilder<MiddleTestBuilder>{
                 .surName("NotNull")
                 .age(35)
                 .likeApple(false)
-                .strings(new String[][]{{"dasf","qwe","qqq"},{"qwe","rty"}})
-                .integers(new int[][]{{1,2,3,4},{1,2,3}})
+                .strings(new String[][][]{{{"dasf","qwe","qqq"},{"hard"}},{{"qwe","rty"},{"123","4567"}},{{"fsdfs","asda"},{"hgfh"}}})
+                .integers(new int[][][]{{{1,2,3,},{4}},{{1,2,3}},{{1,2}}})
                 .booleans(new Boolean[][]{{true,false,false},{false,true,false}})
                 .bytes(new byte[]{1,2,9})
                 .shorts(new short[]{123,15})
@@ -59,8 +59,8 @@ public class MiddleTestBuilder implements TestBuilder<MiddleTestBuilder>{
                 .surName("NotNull")
                 .age(35)
                 .likeApple(false)
-                .strings(new String[][]{{"dasf","qwe","qqq"},{"qwe","rty"}})
-                .integers(new int[][]{{1,2,3,4},{1,2,3}})
+                .strings(new String[][][]{{{"dasf","qwe","qqq"},{"hard"}},{{"qwe","rty"},{"123","4567"}},{{"fsdfs","asda"},{"hgfh"}}})
+                .integers(new int[][][]{{{1,2,3,},{4}},{{1,2,3}},{{1,2}}})
                 .booleans(new Boolean[][]{{true,false,false},{false,true,false}})
                 .bytes(new byte[]{1,2,9})
                 .shorts(new short[]{123,15})

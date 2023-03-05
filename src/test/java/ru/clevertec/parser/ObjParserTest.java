@@ -4,22 +4,13 @@ import com.google.gson.Gson;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import ru.clevertec.entity.Middle;
-import ru.clevertec.entity.Nested;
-import ru.clevertec.entity.Simple;
-import ru.clevertec.entity.Top;
-import ru.clevertec.parser.ObjParser;
 import ru.clevertec.util.MiddleTestBuilder;
 import ru.clevertec.util.NestedTestBuilder;
 import ru.clevertec.util.TopTestBuilder;
-
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -36,18 +27,11 @@ class ObjParserTest {
     void tearDown() {
     }
 
-
-
     @ParameterizedTest
     @MethodSource("argsForToJson")
     void toJson(Object o) throws IllegalAccessException, IOException, ClassNotFoundException {
         Assertions.assertThat(objParser.toJson(o)).isEqualTo(gson.toJson(o));
     }
-
-
-
-
-
 
     static Stream<Arguments> argsForToJson(){
         return Stream.of(
@@ -73,4 +57,5 @@ class ObjParserTest {
         );
 
     }
+
 }

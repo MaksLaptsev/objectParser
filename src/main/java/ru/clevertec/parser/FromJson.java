@@ -1,14 +1,9 @@
 package ru.clevertec.parser;
 import org.apache.commons.lang3.ArrayUtils;
 import ru.clevertec.ObjSimpleWriterAndReader.ObjReader;
-import ru.clevertec.entity.Middle;
-import ru.clevertec.entity.Nested;
-import ru.clevertec.entity.Simple;
-
 import java.lang.reflect.*;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FromJson {
 
@@ -164,5 +159,6 @@ public class FromJson {
             return o;
         }return o;
     }
+
 }
 

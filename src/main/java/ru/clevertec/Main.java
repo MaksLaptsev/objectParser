@@ -7,13 +7,10 @@ import ru.clevertec.entity.Simple;
 import ru.clevertec.entity.Top;
 import ru.clevertec.parser.ObjParser;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IllegalAccessException, IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IllegalAccessException, IOException, ClassNotFoundException, InstantiationException {
         List<Integer> list = new ArrayList<>();
         list.add(1); list.add(2); list.add(3); list.add(4);
         Nested nested_1 = Nested.builder()
@@ -67,8 +64,8 @@ public class Main {
                 .surName(null)
                 .age(35)
                 .likeApple(false)
-                .strings(new String[][]{{"dasf","qwe","qqq"},{"qwe","rty"}})
-                .integers(new int[][]{{1,2,3,4},{1,2,3}})
+                .strings(new String[][][]{{{"dasf","qwe","qqq"},{"hard"}},{{"qwe","rty"},{"123","4567"}},{{"fsdfs","asda"},{"hgfh"}}})
+                .integers(new int[][][]{{{1,2,3,},{4}},{{1,2,3}},{{1,2}}})
                 .booleans(new Boolean[][]{{true,false,false},{false,true,false}})
                 .bytes(new byte[]{1,2,9})
                 .shorts(new short[]{123,15})
@@ -90,8 +87,10 @@ public class Main {
 
 
         System.out.println("Next string -> made by custom parser\n-------------------------------");
-        System.out.println(new ObjParser().toJson(middle));
+        System.out.println(new ObjParser().toJson(top));
         System.out.println("\nNext string -> made by Gson parser\n-------------------------------");
-        System.out.println(new Gson().toJson(middle));
+        System.out.println(new Gson().toJson(top));
+        
     }
+
 }

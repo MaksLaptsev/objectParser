@@ -16,8 +16,8 @@ public class Middle {
     private String surName;
     private int age;
     private boolean likeApple;
-    private String[][] strings;
-    private int[][] integers;
+    private String[][][] strings;
+    private int[][][] integers;
     private Boolean[][] booleans;
     private char[] characters;
     private double[] doubles;
