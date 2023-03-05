@@ -5,12 +5,14 @@ import ru.clevertec.entity.Middle;
 import ru.clevertec.entity.Nested;
 import ru.clevertec.entity.Simple;
 import ru.clevertec.entity.Top;
+import ru.clevertec.parser.FromJson;
 import ru.clevertec.parser.ObjParser;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IllegalAccessException, IOException, ClassNotFoundException, InstantiationException {
+    public static void main(String[] args) throws IllegalAccessException, IOException, ClassNotFoundException, InstantiationException, NoSuchFieldException, InvocationTargetException, NoSuchMethodException {
         List<Integer> list = new ArrayList<>();
         list.add(1); list.add(2); list.add(3); list.add(4);
         Nested nested_1 = Nested.builder()
@@ -90,6 +92,16 @@ public class Main {
         System.out.println(new ObjParser().toJson(top));
         System.out.println("\nNext string -> made by Gson parser\n-------------------------------");
         System.out.println(new Gson().toJson(top));
+
+        String jsonSimple = "{\"id\":1,\"name\":\"Alex\",\"surName\":\"D-Grey\",\"age\":45,\"likeApple\":true,\"list\":[1,2,3,4],\"integers\":[1,2,3,4,5],\"nested\":{\"id\":123,\"age\":999,\"name\":\"GOD\",\"lastName\":\"GODDEST\",\"longList\":[1,2,3],\"stringList\":[\"first\",\"second\"],\"booleanList\":[true,false],\"characterList\":[\"w\",\"y\",\"S\"],\"floatList\":[32.3,11.0,5.0]}}";
+
+        System.out.println("This is json Simple object");
+        System.out.println(jsonSimple+"\n");
+        System.out.println("This is original Object:");
+        System.out.println(simpleOne);
+        System.out.println("This object from json with custom parser");
+        System.out.println((Simple)new FromJson().jSonToObject(jsonSimple,Simple.class));
+        System.out.println("They are equals ? - "+simpleOne.equals(new FromJson().jSonToObject(jsonSimple,Simple.class)));
         
     }
 
