@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.clevertec.parser.ObjParserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-01T22:01:56" hostname="USER-PC" time="0.218">
-  <properties/>
-  <testcase name="[1] NestedTestBuilder(id=15, age=13, name=Nested, lastName=Last, longList=[13, 52, 37], stringList=[first, second], booleanList=[true, false], characterList=[f, o, S], floatList=[325.3, 11.2, 5.0])" classname="ru.clevertec.parser.ObjParserTest" time="0.119"/>
-  <testcase name="[2] MiddleTestBuilder(id=2, name=Vasya, surName=NotNull, age=35, likeApple=false, strings=[[dasf, qwe, qqq], [qwe, rty]], integers=[[1, 2, 3, 4], [1, 2, 3]], booleans=[[true, false, false], [false, true, false]], characters=null, doubles=null, floats=null, bytes=[1, 2, 9], shorts=[123, 15], simples=[SimpleTestBuilder(id=1, name=Alex, surName=D-Grey, age=45, likeApple=true, list=[1, 2, 3], integers=[1, 2, 3, 4, 5], nested=NestedTestBuilder(id=123, age=999, name=GOD, lastName=GODDEST, longList=[1, 2, 3], stringL…" classname="ru.clevertec.parser.ObjParserTest" time="0.03"/>
-  <testcase name="[3] TopTestBuilder(id=5, name=Georg, surName=Jesus, age=777, likeApple=true, simple=SimpleTestBuilder(id=1, name=Alex, surName=D-Grey, age=45, likeApple=true, list=[1, 2, 3], integers=[1, 2, 3, 4, 5], nested=NestedTestBuilder(id=123, age=999, name=GOD, lastName=GODDEST, longList=[1, 2, 3], stringList=[first, second], booleanList=[true, false], characterList=[w, y, S], floatList=[32.3, 11.0, 5.0])), middle=MiddleTestBuilder(id=2, name=Vasya, surName=NotNull, age=35, likeApple=false, strings=[[dasf, qwe, qqq], […" classname="ru.clevertec.parser.ObjParserTest" time="0.012"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

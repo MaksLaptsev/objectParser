@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.clevertec.parser.FromJsonTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-01T22:01:56" hostname="USER-PC" time="0.181">
-  <properties/>
-  <testcase name="jSonToObject()" classname="ru.clevertec.parser.FromJsonTest" time="0.181"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
