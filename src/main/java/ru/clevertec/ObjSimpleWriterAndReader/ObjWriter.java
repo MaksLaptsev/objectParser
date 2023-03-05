@@ -1,4 +1,4 @@
-package ru.clevertec.ObjSimpleWriter;
+package ru.clevertec.ObjSimpleWriterAndReader;
 
 import java.io.IOException;
 
@@ -99,7 +99,5 @@ public class ObjWriter {
     public void write(String s){
         out.append(s);
     }
-
-
 
 }

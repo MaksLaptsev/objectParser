@@ -1,8 +1,7 @@
 package ru.clevertec.parser;
 
 import org.apache.commons.lang3.ArrayUtils;
-import ru.clevertec.ObjSimpleWriter.ObjWriter;
-
+import ru.clevertec.ObjSimpleWriterAndReader.ObjWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -115,6 +114,8 @@ public class ToJson {
             Object d = iterator.next();
             if (isNotStandartJavaObj(d)){
                 writer.write(new ObjParser().toJson(d));
+            } else if (d.getClass().equals(String.class) || d.getClass().equals(Character.class) || d.getClass().equals(char.class)) {
+                writer.writeValueField(d.toString(),true);
             } else {
                 writer.writeValueField(d.toString(),b);
             }
@@ -159,9 +160,13 @@ public class ToJson {
     //разбор и запись массивов типа Integer[][]
     private void checkInArray(int number,Field f, Object object) throws IOException, ClassNotFoundException, IllegalAccessException {
         if (number > 1) {
-            for (int i = 0; i < number; i++) {
-                writeArray(f, Array.get(object,i));
-                if (i < number-1) {
+            int leg = Array.getLength(object);
+            for (int i = 0; i < leg; i++) {
+                try {
+                    writeArray(f, Array.get(object,i));
+                }
+                catch (IndexOutOfBoundsException ignored){}
+                if (i < leg-1) {
                     writer.comma();
                 }
             }
@@ -173,4 +178,5 @@ public class ToJson {
     public boolean getWithoutNullField(){
         return withoutNullField;
     }
+
 }
